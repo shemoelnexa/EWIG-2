@@ -11,7 +11,7 @@ const slides = [
     highlight: "Complex",
     description:
       "A landmark residential community featuring studios, 1-3 bedroom apartments with pool, gym, sauna, and covered parking.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+    image: "https://www.eastandwest.ae/images/projects/dusitthani/r/14.jpg",
     href: "/properties/residential",
   },
   {
@@ -20,7 +20,7 @@ const slides = [
     highlight: "Residence",
     description:
       "Stunning studios and 1-3 bedroom apartments with breathtaking Burj Khalifa views, premium amenities, and 24/7 security.",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
+    image: "https://www.eastandwest.ae/images/projects/westburry-residence/r/14.jpg",
     href: "/properties/residential",
   },
   {

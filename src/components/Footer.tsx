@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 function FacebookIcon() {
   return (
@@ -36,29 +35,46 @@ function LinkedinIcon() {
   );
 }
 
-const quickLinks = [
-  { label: "About Us", href: "/about-us" },
+const propertyLinks = [
   { label: "Residential", href: "/properties/residential" },
   { label: "Commercial", href: "/properties/commercial" },
   { label: "The Square Plaza", href: "/the-square-plaza" },
-  { label: "Careers", href: "/careers" },
-  { label: "Blog", href: "/blog" },
+  { label: "Sustainability", href: "/sustainability" },
 ];
 
-const serviceLinks = [
-  { label: "Sustainability", href: "/sustainability" },
-  { label: "Quality Policy", href: "/quality-policy" },
-  { label: "24/7 Maintenance", href: "/maintenance" },
-  { label: "Tenant Benefits", href: "/tenant-benefits" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact-us" },
+const companyLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact-us" },
+];
+
+const locations = [
+  {
+    name: "Abu Dhabi",
+    address: "7th Floor, Dusit Thani Complex,\nMuroor Road, Abu Dhabi",
+    phone: "+971 2 207 2200",
+    hours: [
+      { days: "Mon–Thu", time: "8:00 AM – 4:00 PM" },
+      { days: "Friday", time: "8:00 AM – 12:00 PM" },
+    ],
+  },
+  {
+    name: "Dubai",
+    address: "Business Bay,\nDubai, UAE",
+    phone: "600 511122",
+    hours: [
+      { days: "Mon–Thu", time: "8:00 AM – 4:00 PM" },
+      { days: "Friday", time: "8:00 AM – 12:00 PM" },
+    ],
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0b09]">
+    <footer className="footer-mesh rounded-[20px] mx-5 mb-5 border border-white/[0.06] backdrop-blur-xl bg-[rgba(10,11,9,0.92)] overflow-hidden relative">
       <style jsx global>{`
-        /* Footer link animated underline */
         .footer-link-underline {
           position: relative;
           display: inline-block;
@@ -76,8 +92,6 @@ export default function Footer() {
         .footer-link-underline:hover::after {
           width: 100%;
         }
-
-        /* Social icon hover */
         .social-icon-hover {
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                       color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -86,16 +100,73 @@ export default function Footer() {
           transform: scale(1.15);
           color: #94a901 !important;
         }
-
-        /* Contact row hover shift */
-        .contact-row-hover {
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        @keyframes fogDrift1 {
+          0% { transform: translate(0, 0) scaleX(1.8) scaleY(1); filter: blur(60px); opacity: 0.4; }
+          20% { transform: translate(15%, 10%) scaleX(2.2) scaleY(0.8); filter: blur(80px); opacity: 0.55; }
+          40% { transform: translate(35%, -5%) scaleX(1.5) scaleY(1.2); filter: blur(50px); opacity: 0.35; }
+          60% { transform: translate(10%, 20%) scaleX(2.5) scaleY(0.7); filter: blur(90px); opacity: 0.6; }
+          80% { transform: translate(-10%, 5%) scaleX(1.6) scaleY(1.1); filter: blur(65px); opacity: 0.38; }
+          100% { transform: translate(0, 0) scaleX(1.8) scaleY(1); filter: blur(60px); opacity: 0.4; }
         }
-        .contact-row-hover:hover {
-          transform: translateX(4px);
+        @keyframes fogDrift2 {
+          0% { transform: translate(0, 0) scaleX(2) scaleY(0.9); filter: blur(70px); opacity: 0.35; }
+          25% { transform: translate(-20%, 15%) scaleX(1.4) scaleY(1.3); filter: blur(50px); opacity: 0.5; }
+          50% { transform: translate(-5%, -10%) scaleX(2.4) scaleY(0.6); filter: blur(85px); opacity: 0.3; }
+          75% { transform: translate(20%, 5%) scaleX(1.7) scaleY(1.1); filter: blur(60px); opacity: 0.48; }
+          100% { transform: translate(0, 0) scaleX(2) scaleY(0.9); filter: blur(70px); opacity: 0.35; }
         }
-
-        /* Gradient top border */
+        @keyframes fogDrift3 {
+          0% { transform: translate(0, 0) scaleX(1.6) scaleY(1.2); filter: blur(55px); opacity: 0.3; }
+          18% { transform: translate(25%, -15%) scaleX(2.3) scaleY(0.7); filter: blur(75px); opacity: 0.45; }
+          38% { transform: translate(-15%, 10%) scaleX(1.3) scaleY(1.4); filter: blur(45px); opacity: 0.25; }
+          58% { transform: translate(-25%, -8%) scaleX(2.6) scaleY(0.6); filter: blur(85px); opacity: 0.5; }
+          78% { transform: translate(10%, 18%) scaleX(1.5) scaleY(1.1); filter: blur(55px); opacity: 0.32; }
+          100% { transform: translate(0, 0) scaleX(1.6) scaleY(1.2); filter: blur(55px); opacity: 0.3; }
+        }
+        @keyframes fogDrift4 {
+          0% { transform: translate(0, 0) scaleX(2.2) scaleY(0.8); filter: blur(65px); opacity: 0.32; }
+          22% { transform: translate(-18%, -12%) scaleX(1.5) scaleY(1.3); filter: blur(50px); opacity: 0.45; }
+          48% { transform: translate(12%, 15%) scaleX(2.8) scaleY(0.5); filter: blur(80px); opacity: 0.28; }
+          72% { transform: translate(22%, -8%) scaleX(1.6) scaleY(1.2); filter: blur(55px); opacity: 0.42; }
+          100% { transform: translate(0, 0) scaleX(2.2) scaleY(0.8); filter: blur(65px); opacity: 0.32; }
+        }
+        .footer-blob {
+          position: absolute;
+          border-radius: 40% 60% 55% 45% / 50% 40% 60% 50%;
+          pointer-events: none;
+        }
+        .footer-blob-1 {
+          width: 700px;
+          height: 400px;
+          top: -30%;
+          left: 0%;
+          background: radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 40%, transparent 70%);
+          animation: fogDrift1 14s ease-in-out infinite;
+        }
+        .footer-blob-2 {
+          width: 650px;
+          height: 350px;
+          bottom: -25%;
+          right: 0%;
+          background: radial-gradient(ellipse, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 40%, transparent 70%);
+          animation: fogDrift2 18s ease-in-out infinite;
+        }
+        .footer-blob-3 {
+          width: 550px;
+          height: 350px;
+          top: 15%;
+          left: 35%;
+          background: radial-gradient(ellipse, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.10) 40%, transparent 70%);
+          animation: fogDrift3 22s ease-in-out infinite;
+        }
+        .footer-blob-4 {
+          width: 500px;
+          height: 300px;
+          top: 45%;
+          left: 15%;
+          background: radial-gradient(ellipse, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.08) 40%, transparent 70%);
+          animation: fogDrift4 16s ease-in-out infinite;
+        }
         .footer-gradient-border {
           position: relative;
         }
@@ -115,92 +186,129 @@ export default function Footer() {
         }
       `}</style>
 
-      {/* Subtle gradient top border */}
-      <div className="footer-gradient-border">
+      <div className="footer-blob footer-blob-1" />
+      <div className="footer-blob footer-blob-2" />
+      <div className="footer-blob footer-blob-3" />
+      <div className="footer-blob footer-blob-4" />
+
+      <div className="footer-gradient-border relative z-10">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-20 lg:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {/* Brand */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_2fr] gap-16 lg:gap-8">
+            {/* Properties Column */}
             <div>
-              <Link href="/">
-                <Image
-                  src="/images/logo.png"
-                  alt="East & West International Group"
-                  width={160}
-                  height={49}
-                  className="h-11 w-auto brightness-0 invert"
-                />
-              </Link>
-              <p className="mt-6 text-sm leading-relaxed text-white/60 max-w-xs">
-                Leading Integrated Real Estate Group in the UAE since 1993.
-              </p>
-              <div className="flex gap-4 mt-6">
-                <a href="https://www.facebook.com/East-West-International-Group-103804441028858/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/50" aria-label="Facebook"><FacebookIcon /></a>
-                <a href="https://www.instagram.com/eastandwest_int_grp/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/50" aria-label="Instagram"><InstagramIcon /></a>
-                <a href="https://www.youtube.com/channel/UCUoQzzscZdJEnZ07uhN9G-Q/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/50" aria-label="YouTube"><YoutubeIcon /></a>
-                <a href="https://www.linkedin.com/company/east-west-international-group/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/50" aria-label="LinkedIn"><LinkedinIcon /></a>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-[11px] uppercase tracking-[0.15em] text-ewig-gold mb-6 font-medium">Quick Links</h4>
-              <ul className="space-y-3">
-                {quickLinks.map((link) => (
+              <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 mb-8 font-medium">
+                Properties
+              </h4>
+              <ul className="space-y-1.5">
+                {propertyLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="footer-link-underline text-[14px] text-white/60 hover:text-white transition-colors duration-300">{link.label}</Link>
+                    <Link
+                      href={link.href}
+                      className="footer-link-underline font-heading text-[20px] tracking-[-0.02em] font-light text-white/80 hover:text-white transition-colors duration-300"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Company Column */}
             <div>
-              <h4 className="text-[11px] uppercase tracking-[0.15em] text-ewig-gold mb-6 font-medium">Services</h4>
-              <ul className="space-y-3">
-                {serviceLinks.map((link) => (
+              <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 mb-8 font-medium">
+                Company
+              </h4>
+              <ul className="space-y-1.5">
+                {companyLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="footer-link-underline text-[14px] text-white/60 hover:text-white transition-colors duration-300">{link.label}</Link>
+                    <Link
+                      href={link.href}
+                      className="footer-link-underline font-heading text-[20px] tracking-[-0.02em] font-light text-white/80 hover:text-white transition-colors duration-300"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Locations */}
             <div>
-              <h4 className="text-[11px] uppercase tracking-[0.15em] text-ewig-gold mb-6 font-medium">Contact</h4>
-              <ul className="space-y-4">
-                <li className="contact-row-hover flex gap-3 text-[14px] text-white/60">
-                  <MapPin size={16} className="shrink-0 mt-0.5 text-ewig-gold/70" />
-                  <span>7th Floor, Dusit Thani Complex, Muroor Road, Abu Dhabi, UAE</span>
-                </li>
-                <li className="contact-row-hover flex gap-3 text-[14px] text-white/60">
-                  <Phone size={16} className="shrink-0 text-ewig-gold/70" />
-                  <div className="flex flex-col gap-0.5">
-                    <a href="tel:600511122" className="hover:text-white transition-colors">600 511122</a>
-                    <a href="tel:+97122072200" className="hover:text-white transition-colors">+971 2 207 2200</a>
+              <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 mb-8 font-medium">
+                Locations
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {locations.map((loc) => (
+                  <div key={loc.name}>
+                    <h5 className="font-heading text-[20px] font-light text-white mb-1 pb-2 border-b border-ewig-gold/40 inline-block">
+                      {loc.name}
+                    </h5>
+                    <p className="text-[14px] text-white/50 mt-4 whitespace-pre-line leading-relaxed">
+                      {loc.address}
+                    </p>
+                    <a
+                      href={`tel:${loc.phone.replace(/\s/g, "")}`}
+                      className="block font-heading text-[18px] font-light text-white/90 mt-4 hover:text-ewig-gold transition-colors"
+                    >
+                      {loc.phone}
+                    </a>
+                    <div className="mt-4 space-y-1">
+                      {loc.hours.map((h) => (
+                        <div
+                          key={h.days}
+                          className="flex gap-4 text-[13px] text-white/40"
+                        >
+                          <span className="w-16 shrink-0">{h.days}</span>
+                          <span>{h.time}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </li>
-                <li className="contact-row-hover flex gap-3 text-[14px] text-white/60">
-                  <Mail size={16} className="shrink-0 text-ewig-gold/70" />
-                  <a href="mailto:leasing@ewp.ae" className="hover:text-white transition-colors">leasing@ewp.ae</a>
-                </li>
-                <li className="contact-row-hover flex gap-3 text-[14px] text-white/60">
-                  <Clock size={16} className="shrink-0 text-ewig-gold/70" />
-                  <span>Mon–Thu 8AM–4PM, Fri 8AM–12PM</span>
-                </li>
-              </ul>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/[0.06]">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-[11px] text-white/50">&copy; {new Date().getFullYear()} East & West International Group. All rights reserved.</p>
-          <div className="flex gap-6 text-[11px] text-white/50">
-            <Link href="/legal" className="footer-link-underline hover:text-white/90 transition-colors">Terms of Use</Link>
-            <Link href="/legal" className="footer-link-underline hover:text-white/90 transition-colors">Privacy Policy</Link>
+      <div className="border-t border-white/[0.06] relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-3">
+            <p className="text-[11px] text-white/40">
+              &copy; {new Date().getFullYear()}
+            </p>
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="East & West International Group"
+                width={120}
+                height={36}
+                className="h-7 w-auto brightness-0 invert opacity-60"
+              />
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <Link
+              href="/legal"
+              className="footer-link-underline text-[11px] text-white/40 hover:text-white/80 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/legal"
+              className="footer-link-underline text-[11px] text-white/40 hover:text-white/80 transition-colors"
+            >
+              Terms &amp; Conditions
+            </Link>
+          </div>
+
+          <div className="flex gap-4">
+            <a href="https://www.facebook.com/East-West-International-Group-103804441028858/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/40" aria-label="Facebook"><FacebookIcon /></a>
+            <a href="https://www.instagram.com/eastandwest_int_grp/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/40" aria-label="Instagram"><InstagramIcon /></a>
+            <a href="https://www.youtube.com/channel/UCUoQzzscZdJEnZ07uhN9G-Q/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/40" aria-label="YouTube"><YoutubeIcon /></a>
+            <a href="https://www.linkedin.com/company/east-west-international-group/" target="_blank" rel="noopener noreferrer" className="social-icon-hover text-white/40" aria-label="LinkedIn"><LinkedinIcon /></a>
           </div>
         </div>
       </div>

@@ -160,7 +160,7 @@ function LetterReveal({ text }: { text: string }) {
                 opacity: letterProgress,
                 transform: `translateY(${(1 - letterProgress) * 30}px)`,
                 filter: `blur(${blurAmount}px)`,
-                color: "#e0d3cc",
+                color: "#d8d8d8",
               }}
             >
               {char === " " ? "\u00A0" : char}

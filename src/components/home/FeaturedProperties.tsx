@@ -7,12 +7,12 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const properties = [
-  { title: "Dusit Thani Complex", location: "Abu Dhabi", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80" },
-  { title: "Westburry Residence", location: "Business Bay, Dubai", image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80" },
-  { title: "The Hills Abu Dhabi", location: "Abu Dhabi", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80" },
-  { title: "Marina Gate", location: "Marsa Dubai", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80" },
+  { title: "Dusit Thani Complex", location: "Abu Dhabi", image: "https://www.eastandwest.ae/images/projects/dusitthani/r/14.jpg" },
+  { title: "Westburry Residence", location: "Business Bay, Dubai", image: "https://www.eastandwest.ae/images/projects/westburry-residence/r/14.jpg" },
+  { title: "The Hills Abu Dhabi", location: "Abu Dhabi", image: "https://www.eastandwest.ae/images/projects/thehills/r/14.jpg" },
+  { title: "Marina Gate", location: "Marsa Dubai", image: "https://www.eastandwest.ae/images/projects/marina-gate-2/r/20.jpg" },
   { title: "Al Qurm Compound", location: "Abu Dhabi", image: "https://www.eastandwest.ae/images/projects/alquram-compound/r/10.jpg" },
-  { title: "Al Mushrif Villas", location: "Abu Dhabi", image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80" },
+  { title: "Al Mushrif Villas", location: "Abu Dhabi", image: "https://www.eastandwest.ae/images/projects/mishrif-villas/r/01.jpg" },
 ];
 
 export default function FeaturedProperties() {
