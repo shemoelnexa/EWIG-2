@@ -58,7 +58,7 @@ export default function IntroSection() {
           {/* Right column — image aligned with left, text bottom-right */}
           <div className="lg:col-span-7 lg:col-start-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Image — aligned to top */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-12">
               <ScrollReveal direction="right">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -74,9 +74,9 @@ export default function IntroSection() {
             </div>
 
             {/* Text — bottom-right, next to image */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-12">
               <ScrollReveal direction="right" delay={150}>
-                <p className="text-[15px] leading-[1.8] text-[#0a0b09]/60 max-w-sm">
+                <p className="text-[15px] leading-[1.8] text-[#0a0b09]/60 max-w-md">
                   We create spaces that not only offer a place to live, but
                   also foster lasting memories while shaping a better,
                   more sustainable future. Since 1993, East & West has been
