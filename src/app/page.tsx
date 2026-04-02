@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import TrustSection from "@/components/home/TrustSection";
 import IntroSection from "@/components/home/IntroSection";
 import FeaturedProperties from "@/components/home/FeaturedProperties";
 import PropertyShowcase from "@/components/home/PropertyShowcase";
@@ -12,6 +13,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <TrustSection />
       <IntroSection />
       <FeaturedProperties />
       <PropertyShowcase />

@@ -186,7 +186,7 @@ export default function Navbar() {
 
       {/* Fullscreen menu overlay */}
       <div
-        className={`fixed inset-0 z-[55] bg-[#fdf9f3] menu-overlay ${
+        className={`fixed inset-0 z-[55] bg-[#fdf9f3]/80 backdrop-blur-xl menu-overlay ${
           menuOpen ? "open pointer-events-auto" : "pointer-events-none"
         }`}
         style={{ opacity: menuOpen ? 1 : 0 }}
